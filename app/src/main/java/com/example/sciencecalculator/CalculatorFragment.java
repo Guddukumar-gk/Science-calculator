@@ -6,13 +6,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.example.sciencecalculator.databinding.FragmentCalculatorBinding;
 
 
 public class CalculatorFragment extends Fragment {
-    double num1,num2;
+    double num1,num2,total;
     int count1=0;
 
     boolean addition ,substraction,multi,division,modules;
@@ -115,7 +114,7 @@ public class CalculatorFragment extends Fragment {
                 }
             }
         });
-        binding.allclear.setOnClickListener(new View.OnClickListener() {
+        binding.CA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 binding.inputText.setText("");
@@ -144,7 +143,7 @@ public class CalculatorFragment extends Fragment {
             }
         });
 
-        binding.substra.setOnClickListener(new View.OnClickListener() {
+        binding.subtra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 num1 = Float.parseFloat(binding.inputText.getText() + "");
@@ -152,13 +151,20 @@ public class CalculatorFragment extends Fragment {
                 binding.inputText.setText(null);
             }
         });
+        binding.module.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1 = Float.parseFloat(binding.inputText.getText()+"");
+                modules = true;
+                binding.inputText.setText(null);
+            }
+        });
 
         binding.multi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                num1 = Float.parseFloat(binding.inputText.getText() + "");
+                num1 = Float.parseFloat(String.valueOf(binding.inputText.getText()));
                 multi = true;
-                binding.inputText.setText(null);
             }
         });
 
@@ -177,7 +183,7 @@ public class CalculatorFragment extends Fragment {
                 num2 = Float.parseFloat(binding.inputText.getText() + "");
 
                 if (addition == true) {
-                    binding.resultview.setText(num1 + num2 + "");
+                    binding.resultview.setText( (num1+num2+""));
                     addition = false;
                 }
 
@@ -194,6 +200,11 @@ public class CalculatorFragment extends Fragment {
                 if (division == true) {
                     binding.resultview.setText(num1 / num2 + "");
                     division = false;
+                }
+                if(modules==true)
+                {
+                    binding.resultview.setText((int) (num1%num2));
+                    modules = false;
                 }
             }
         });
