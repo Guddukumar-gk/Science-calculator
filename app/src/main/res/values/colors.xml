@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Tanaccent">#D2B48C</color>
+<color name="grayAccent">#afb9c5</color>
+
+    <color name="redbackgroud">#5a020b</color>
+    <color name="greenbackgroud">#013300</color>
+    <color name="green">#2ffd64</color>
+    <color name="purplebackgroud">#330133</color>
+    <color name="purple">#de00de</color>
+    <color name="grayend">#484e52</color>
+
+
+    <color name="redAccent">#FF0000</color>
+
+
+    <color name="blueblack">#040720</color>
+    <color name="blackstart">#060607</color>
 </resources>

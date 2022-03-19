@@ -3,9 +3,12 @@ package com.example.sciencecalculator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.sciencecalculator.databinding.FragmentCalculatorBinding;
 
@@ -122,14 +125,9 @@ public class CalculatorFragment extends Fragment {
 
             }
         });
-        binding.add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
         binding.add.setOnClickListener(new View.OnClickListener() {
+            int input = R.id.inputText;
             @Override
             public void onClick(View v) {
 
@@ -165,6 +163,7 @@ public class CalculatorFragment extends Fragment {
             public void onClick(View v) {
                 num1 = Float.parseFloat(String.valueOf(binding.inputText.getText()));
                 multi = true;
+                binding.inputText.setText("");
             }
         });
 

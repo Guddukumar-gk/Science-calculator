@@ -1,5 +1,8 @@
 package com.example.sciencecalculator;
 
+import static com.example.sciencecalculator.R.drawable.name;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.sciencecalculator.databinding.FragmentEMIFargmentBinding;
+
 
 public class EMIFargment extends Fragment {
     FragmentEMIFargmentBinding binding;
@@ -47,6 +51,7 @@ public class EMIFargment extends Fragment {
 
 
         btr.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
                 String str1 = p.getText().toString();
