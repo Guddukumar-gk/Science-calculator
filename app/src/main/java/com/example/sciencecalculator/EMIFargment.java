@@ -3,6 +3,7 @@ package com.example.sciencecalculator;
 import static com.example.sciencecalculator.R.drawable.name;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,6 +12,7 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +28,7 @@ public class EMIFargment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentEMIFargmentBinding.inflate(inflater,container,false);
+
         final EditText p = binding.amount;
         final EditText r = binding.Rate;
         final EditText t = binding.year;
@@ -90,4 +93,5 @@ public class EMIFargment extends Fragment {
 
         return binding.getRoot();
     }
+
 }
